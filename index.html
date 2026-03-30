@@ -2,323 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blueillusionz | Frank Rivera</title>
-  <meta name="description" content="Blueillusionz showcases executive leadership in portfolio management, strategy, IT modernization, transformation, and innovation." />
+
   <style>
-    :root {
-      --bg: #06101f;
-      --panel: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.12);
-      --text: #eef4ff;
-      --muted: #afbdd3;
-      --accent: #66c7ff;
-      --white: #ffffff;
-      --shadow: 0 24px 60px rgba(0,0,0,0.35);
-      --max: 1180px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(102,199,255,0.16), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(155,123,255,0.16), transparent 26%),
-        linear-gradient(180deg, #06101f 0%, #081424 42%, #07101a 100%);
-      color: var(--text);
+      font-family: Arial, sans-serif;
+      background: #0a0f1c;
+      color: #e6edf3;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #b0b8c5;
       line-height: 1.6;
     }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
-    .site-header {
-      position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(12px);
-      background: rgba(6, 16, 31, 0.82); border-bottom: 1px solid var(--border);
+
+    header {
+      background: #050a14;
+      padding: 20px;
+      border-bottom: 1px solid #1f2937;
     }
-    .header-inner {
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0;
+
+    .hero {
+      padding: 80px 20px;
     }
-    .brand-title { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.02em; }
-    .brand-subtitle { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.24em; margin-top: 0.2rem; }
-    .nav { display: flex; gap: 1.35rem; align-items: center; flex-wrap: wrap; }
-    .nav a { color: var(--muted); font-size: 0.95rem; }
-    .nav a:hover { color: var(--white); }
-    .cta {
-      display: inline-flex; align-items: center; justify-content: center; border-radius: 999px;
-      padding: 0.85rem 1.1rem; font-weight: 700; transition: 0.2s ease; border: 1px solid transparent;
+
+    .hero h1 {
+      font-size: 42px;
+      max-width: 600px;
     }
-    .cta-primary { background: var(--white); color: #06101f; box-shadow: var(--shadow); }
-    .cta-secondary { background: rgba(255,255,255,0.04); border-color: var(--border); color: var(--white); }
-    section { padding: 5.5rem 0; }
-    .hero { padding-top: 6.5rem; padding-bottom: 5rem; }
-    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.9fr; gap: 2rem; align-items: center; }
-    .eyebrow {
-      display: inline-block; padding: 0.45rem 0.85rem; border: 1px solid rgba(102,199,255,0.2);
-      color: #bfeaff; background: rgba(102,199,255,0.08); border-radius: 999px; text-transform: uppercase;
-      letter-spacing: 0.22em; font-size: 0.72rem; font-weight: 700; margin-bottom: 1rem;
+
+    .hero p {
+      margin-top: 20px;
+      max-width: 600px;
     }
-    h1, h2, h3 { margin: 0; line-height: 1.12; }
-    h1 { font-size: clamp(2.6rem, 5vw, 5rem); max-width: 12ch; }
-    h2 { font-size: clamp(2rem, 3vw, 3.1rem); max-width: 15ch; }
-    .hero p.lead, .section-intro, .bio p, .contact-copy, .article-content, .card p, .case-copy { color: var(--muted); }
-    .hero p.lead { font-size: 1.1rem; max-width: 56ch; margin: 1.5rem 0 0; }
-    .button-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
-    .stats { margin-top: 2rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
-    .stat { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 18px; padding: 1rem; color: #dfe9f8; font-size: 0.94rem; }
-    .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 32px; padding: 1.5rem; box-shadow: var(--shadow); }
-    .positioning-box { background: linear-gradient(180deg, rgba(10,22,40,0.96), rgba(8,18,31,0.94)); border: 1px solid var(--border); border-radius: 26px; padding: 2rem; }
-    .positioning-box h3 { color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.76rem; margin-bottom: 1.1rem; }
-    .positioning-box p { font-size: 1.5rem; line-height: 1.5; margin: 0; }
-    .mini-grid { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .mini-card, .quote-box, .highlight-box, .contact-card, .card, .case-study, .insight-article, .framework-visual {
-      background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; box-shadow: var(--shadow);
+
+    .section {
+      padding: 60px 0;
+      border-top: 1px solid #1f2937;
     }
-    .section-head { margin-bottom: 2rem; }
-    .section-label { color: #bfeaff; text-transform: uppercase; letter-spacing: 0.26em; font-size: 0.74rem; font-weight: 700; margin-bottom: 0.75rem; }
-    .section-intro { margin-top: 1rem; max-width: 64ch; font-size: 1.05rem; }
-    .bio-grid, .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-    .highlight-box ul { margin: 0; padding-left: 1rem; color: var(--muted); }
-    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-    .card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
-    .case-stack, .insight-stack { display: grid; gap: 1.4rem; }
-    .case-study h3, .insight-article h3 { font-size: 1.55rem; margin-bottom: 1rem; }
-    .case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 1.5rem; margin-top: 1.1rem; }
-    .case-block strong { color: #bfeaff; display: block; margin-bottom: 0.4rem; font-size: 0.9rem; }
-    .framework-section { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .framework-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-top: 1rem; }
-    .phase { background: linear-gradient(180deg, rgba(9,20,36,0.95), rgba(8,16,30,0.9)); border: 1px solid var(--border); border-radius: 24px; padding: 1.25rem; min-height: 220px; }
-    .phase-number { width: 40px; height: 40px; border-radius: 999px; background: rgba(255,255,255,0.95); color: #08111d; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 1rem; }
-    .phase .phase-sub { color: #c6d3e7; font-style: italic; margin-bottom: 0.9rem; display: block; }
-    .phase ul { margin: 0; padding-left: 1rem; color: var(--muted); }
-    .framework-principle { margin-top: 1.2rem; background: rgba(4,10,21,0.9); border: 1px solid var(--border); border-radius: 22px; padding: 1.25rem 1.4rem; }
-    .article-content { white-space: pre-line; margin-top: 1rem; }
-    .contact-list { list-style: none; padding: 0; margin: 1.2rem 0 0; color: var(--muted); }
-    .footer { border-top: 1px solid var(--border); padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; }
-    @media (max-width: 1024px) {
-      .hero-grid, .bio-grid, .contact-grid, .card-grid, .framework-flow, .case-grid, .stats, .mini-grid { grid-template-columns: 1fr 1fr; }
+
+    .contact-card {
+      background: #111827;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
     }
-    @media (max-width: 820px) {
-      .nav { display: none; }
-      .hero-grid, .bio-grid, .contact-grid, .card-grid, .framework-flow, .case-grid, .stats, .mini-grid { grid-template-columns: 1fr; }
+
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 1px solid #1f2937;
+      text-align: center;
+      padding: 30px;
+      color: #9ca3af;
     }
   </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <div class="brand-title">Blueillusionz</div>
-        <div class="brand-subtitle">Frank Rivera • Executive Leadership</div>
-      </div>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#framework">Framework</a>
-        <a href="#insights">Insights</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Executive Platform</div>
-          <h1>Transforming complexity into capability.</h1>
-          <p class="lead">I am a federal portfolio and operations executive with more than 30 years of experience leading enterprise transformation, portfolio management, IT modernization, and strategic execution across defense, federal agencies, and industry.</p>
-          <div class="button-row">
-            <a class="cta cta-primary" href="#portfolio">View Portfolio</a>
-            <a class="cta cta-secondary" href="#insights">Explore Insights</a>
-          </div>
-          <div class="stats">
-            <div class="stat">30+ Years Leadership</div>
-            <div class="stat">$29M+ Portfolio Oversight</div>
-            <div class="stat">Federal & Defense Experience</div>
-            <div class="stat">Executive Advisor</div>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="positioning-box">
-            <h3>Positioning</h3>
-            <p>A leader who bridges structured execution with innovative thinking to drive transformation.</p>
-            <div class="mini-grid">
-              <div class="mini-card"><strong>Executive Impact</strong>Delivering measurable results across complex, mission-critical environments.</div>
-              <div class="mini-card"><strong>Thought Leadership</strong>Exploring innovation, creativity, and the evolution of ideas into outcomes.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<header>
+  <div class="container">
+    <strong>Blueillusionz</strong> | Frank Rivera
+  </div>
+</header>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">About Frank Rivera</div>
-          <h2>Executive leadership built on experience, discipline, and transformation.</h2>
-        </div>
-        <div class="bio-grid">
-          <div class="bio">
-            <p>Frank Rivera is a transformational executive with a career spanning over three decades across federal agencies, defense organizations, and industry. His leadership has focused on enterprise transformation, portfolio management, IT modernization, and strategic execution.</p>
-            <p>With a foundation rooted in U.S. Army aviation operations, Frank developed his leadership approach in high-tempo, high-stakes environments where precision, accountability, and teamwork were essential. He later translated that operational discipline into the federal and consulting space, where he led modernization and performance improvement initiatives across multiple agencies.</p>
-            <p>Throughout his career, Frank has served as a trusted advisor to senior leaders, helping organizations navigate complexity, change, and growth. His work has included overseeing multimillion-dollar portfolios, establishing governance frameworks, improving operational performance, and delivering strategic initiatives that strengthen mission outcomes.</p>
-            <p>Through Blueillusionz, Frank also explores the intersection of creativity, innovation, and business transformation—demonstrating how ideas evolve into structured, executable value.</p>
-          </div>
-          <div>
-            <div class="highlight-box">
-              <strong>Leadership Highlights</strong>
-              <ul>
-                <li>30+ years of leadership across federal, defense, and industry</li>
-                <li>Executive oversight of $29M+ multi-agency portfolios</li>
-                <li>Led enterprise transformation and modernization initiatives</li>
-                <li>Trusted advisor to senior government and business leaders</li>
-              </ul>
-            </div>
-            <div style="height: 1rem;"></div>
-            <div class="quote-box">
-              <strong>Leadership Philosophy</strong>
-              Transformation is not driven by ideas alone. It is achieved through disciplined execution, strategic alignment, and a willingness to think creatively about what is possible.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="hero container">
+  <h1>Driving transformation at the intersection of strategy, execution, and innovation.</h1>
 
-    <section id="expertise">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">Expertise</div>
-          <h2>Core areas of leadership and execution.</h2>
-          <p class="section-intro">A focused presentation of the capabilities that define the Blueillusionz platform and the value behind your executive brand.</p>
-        </div>
-        <div class="card-grid">
-          <div class="card"><h3>Enterprise Transformation</h3><p>Led enterprise modernization initiatives across federal agencies, aligning mission priorities with measurable operational outcomes.</p></div>
-          <div class="card"><h3>Portfolio Leadership</h3><p>Provided executive oversight of $29M+ multi-agency portfolios, ensuring disciplined execution, governance, and performance.</p></div>
-          <div class="card"><h3>Strategy & Growth</h3><p>Translated executive vision into operational strategy, supporting business growth, capture efforts, and long-term positioning.</p></div>
-          <div class="card"><h3>IT Modernization</h3><p>Directed governance and modernization across IT, cybersecurity, and data environments within complex federal ecosystems.</p></div>
-          <div class="card"><h3>Operational Excellence</h3><p>Delivered measurable efficiency gains through Lean Six Sigma, process optimization, and performance management.</p></div>
-          <div class="card"><h3>Leadership & Innovation</h3><p>Bridging structured execution with creative thinking to drive transformation, innovation, and organizational evolution.</p></div>
-        </div>
-      </div>
-    </section>
+  <p>
+    Former federal portfolio executive | $29M+ portfolio leadership | Trusted advisor across DoD & civilian agencies
+  </p>
 
-    <section id="portfolio">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">Portfolio</div>
-          <h2>Demonstrated leadership through measurable transformation.</h2>
-          <p class="section-intro">A selection of executive-level case studies highlighting enterprise transformation, modernization, and operational impact across federal and defense environments.</p>
-        </div>
-        <div class="case-stack">
-          <article class="case-study">
-            <h3>Department of State (DoS)</h3>
-            <div class="case-grid">
-              <div class="case-block case-copy"><strong>Challenge</strong>Fragmented IT governance across cybersecurity, data management, and modernization initiatives limited executive visibility and alignment.</div>
-              <div class="case-block case-copy"><strong>Approach</strong>Supported the establishment of enterprise governance through the IT Executive Council, aligning stakeholders, priorities, and decision-making structures.</div>
-              <div class="case-block case-copy"><strong>Execution</strong>Integrated cross-functional coordination across IT, cybersecurity, and data domains while enabling structured executive reporting and governance processes.</div>
-              <div class="case-block case-copy"><strong>Outcome</strong>Strengthened enterprise governance, improved executive visibility, and enabled more coordinated modernization across mission-critical systems.</div>
-            </div>
-          </article>
-          <article class="case-study">
-            <h3>U.S. Navy – N1 55-to-1 Initiative</h3>
-            <div class="case-grid">
-              <div class="case-block case-copy"><strong>Challenge</strong>Fifty-five legacy systems created redundancy, inefficiency, and lack of enterprise alignment across personnel systems.</div>
-              <div class="case-block case-copy"><strong>Approach</strong>Led modernization efforts focused on consolidation, process alignment, and enterprise system integration.</div>
-              <div class="case-block case-copy"><strong>Execution</strong>Directed cross-functional teams using Agile methods to streamline workflows, reduce duplication, and align systems to mission objectives.</div>
-              <div class="case-block case-copy"><strong>Outcome</strong>Reduced system redundancy by over 60%, improved operational efficiency, and delivered a unified enterprise platform aligned to mission needs.</div>
-            </div>
-          </article>
-          <article class="case-study">
-            <h3>Transportation Security Administration (TSA)</h3>
-            <div class="case-grid">
-              <div class="case-block case-copy"><strong>Challenge</strong>Operational inefficiencies limited throughput and detection effectiveness across national screening operations.</div>
-              <div class="case-block case-copy"><strong>Approach</strong>Applied Lean Six Sigma methodologies to identify inefficiencies and redesign operational processes.</div>
-              <div class="case-block case-copy"><strong>Execution</strong>Led national-level transformation initiatives, facilitated rapid improvement events, and aligned leadership around performance metrics.</div>
-              <div class="case-block case-copy"><strong>Outcome</strong>Increased throughput and detection rates by over 70%, significantly improving both efficiency and mission effectiveness.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+  <p>
+    I specialize in aligning strategy, execution, and innovation to deliver measurable outcomes in complex, mission-critical environments.
+  </p>
+</section>
 
-    <section id="framework" class="framework-section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">Framework</div>
-          <h2>The Illusion-to-Execution Framework.</h2>
-          <p class="section-intro">A philosophy for transforming abstract ideas into measurable, real-world impact—where creativity, strategy, and execution converge.</p>
-        </div>
-        <div class="framework-principle">Innovation is not a moment. It is a process. True transformation happens when creative vision is combined with strategic structure and disciplined execution.</div>
-        <div class="framework-flow">
-          <div class="phase"><div class="phase-number">1</div><h3>Vision</h3><span class="phase-sub">The Illusion</span><ul><li>Raw ideas</li><li>Creativity</li><li>Possibility</li></ul></div>
-          <div class="phase"><div class="phase-number">2</div><h3>Strategy</h3><span class="phase-sub">The Blueprint</span><ul><li>Clarity</li><li>Alignment</li><li>Feasibility</li></ul></div>
-          <div class="phase"><div class="phase-number">3</div><h3>Execution</h3><span class="phase-sub">The Discipline</span><ul><li>Focus</li><li>Governance</li><li>Delivery</li></ul></div>
-          <div class="phase"><div class="phase-number">4</div><h3>Impact</h3><span class="phase-sub">The Outcome</span><ul><li>Results</li><li>Transformation</li><li>Lasting value</li></ul></div>
-        </div>
-      </div>
-    </section>
+<section class="section container">
+  <h2>About</h2>
+  <p>
+    Frank Rivera is a transformational executive with over 30 years of leadership across federal agencies, defense organizations, and industry. His experience spans enterprise transformation, portfolio management, IT modernization, and strategic execution.
+  </p>
+</section>
 
-    <section id="insights">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">Insights</div>
-          <h2>Executive perspectives on strategy, leadership, and innovation.</h2>
-          <p class="section-intro">These insights reflect a practical and experience-driven perspective on transformation—grounded in execution, informed by leadership, and expanded through innovation.</p>
-        </div>
-        <div class="insight-stack">
-          <article class="insight-article"><h3>Why Strategy Fails Without Execution</h3><div class="article-content">Most organizations do not fail because they lack strategy. They fail because they are unable to execute.
+<section class="section container">
+  <h2>Framework</h2>
+  <p><strong>The Blueillusionz Framework: From Vision to Impact</strong></p>
+  <p>
+    This is the model I use to turn ideas into enterprise capability—where creativity, structure, and execution converge.
+  </p>
+</section>
 
-In my experience, strategy is often developed in isolation and approved at the executive level. But once it reaches execution, it encounters friction: unclear ownership, competing priorities, lack of governance, and misaligned incentives.
+<section id="contact" class="section container">
+  <h2>Contact</h2>
 
-Strategy defines direction. Execution determines success.</div></article>
-          <article class="insight-article"><h3>Innovation Inside Structured Organizations</h3><div class="article-content">Innovation is often viewed as disruptive—something that exists outside of structure. In reality, the most effective innovation occurs within it.
+  <p>
+    Open to executive opportunities, advisory engagements, and strategic collaboration.
+  </p>
 
-Highly structured organizations are not barriers to innovation. They are platforms for it—if approached correctly.
+  <div class="contact-card">
+    <h3>Connect with Blueillusionz</h3>
 
-Innovation is not the absence of structure. It is the intelligent use of it.</div></article>
-          <article class="insight-article"><h3>From Concept to Capability: Turning Ideas into Results</h3><div class="article-content">Every meaningful transformation begins as an idea—often abstract, unrefined, and uncertain.
+    <p>
+      For executive inquiries, advisory discussions, or collaboration opportunities:
+    </p>
 
-Vision represents possibility. Strategy provides structure. Execution delivers results. Impact defines value.
+    <ul>
+      <li>
+        <strong>Email:</strong>
+        <a href="mailto:frank_rivera@blueillusionz.com">
+          frank_rivera@blueillusionz.com
+        </a>
+      </li>
 
-Innovation is not just about creating ideas. It is about delivering outcomes.</div></article>
-        </div>
-      </div>
-    </section>
+      <li>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/fr07eml/" target="_blank">
+          linkedin.com/in/fr07eml
+        </a>
+      </li>
 
-    <section id="contact">
-      <div class="container contact-grid">
-        <div>
-          <section id="contact">
-  <div class="container contact-grid">
-    <div>
-      <div class="section-label">Contact</div>
-      <h2>Open to executive opportunities, advisory engagements, and strategic collaboration.</h2>
-      <p class="contact-copy section-intro">
-        I welcome conversations related to senior leadership roles, enterprise transformation, portfolio management, and innovation-driven initiatives across federal, defense, and commercial sectors.
-      </p>
-    </div>
-
-    <div class="contact-card">
-      <h3>Connect with Blueillusionz</h3>
-      <p class="contact-copy">
-        For executive inquiries, advisory discussions, or collaboration opportunities:
-      </p>
-
-      <ul class="contact-list">
-        <li><strong>Email:</strong> <a href="mailto:frank_rivera@blueillusionz.com">frank_rivera@blueillusionz.com</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/fr07eml/" target="_blank">linkedin.com/in/fr07eml</a></li>
-        <li><strong>Location:</strong> Stafford, Virginia</li>
-      </ul>
-    </div>
+      <li>
+        <strong>Location:</strong> Stafford, Virginia
+      </li>
+    </ul>
   </div>
 </section>
 
-  <footer class="footer">
-    <div class="container">© <span id="year"></span> Blueillusionz. Executive Leadership • Strategy • Innovation</div>
-  </footer>
+<footer>
+  Frank Rivera | Blueillusionz  
+  <br/>
+  Executive Leadership • Strategy • Transformation • Innovation  
+  <br/><br/>
+  © 2026 Blueillusionz. All rights reserved.
+</footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
